@@ -1,6 +1,12 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
 
+  def import
+    Menu.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
+
   # GET /menus
   # GET /menus.json
   def index
