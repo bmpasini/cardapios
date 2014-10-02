@@ -6095,3 +6095,103 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.9ms)
+  Rendered imports/_menu.html.erb (0.6ms)
+  Rendered imports/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 128ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:17 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 114ms (Views: 112.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:48:19 -0400
