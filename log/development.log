@@ -5199,3 +5199,114 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:11:06 -0400
   [1m[35mRestaurant Load (0.8ms)[0m  SELECT  "restaurants".* FROM "restaurants"   ORDER BY "restaurants"."id" DESC LIMIT 1
   [1m[36mRestaurant Load (0.8ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"   ORDER BY "restaurants"."id" DESC LIMIT 1[0m
   [1m[35mRestaurant Load (0.8ms)[0m  SELECT  "restaurants".* FROM "restaurants"   ORDER BY "restaurants"."id" DESC LIMIT 1
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (1.8ms)
+  Rendered imports/_menu.html.erb (1.3ms)
+  Rendered imports/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 173ms (Views: 171.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:46 -0400
+
+
+Started POST "/imports/restaurants" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+Processing by ImportsController#restaurants as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "restaurant_file"=>#<ActionDispatch::Http::UploadedFile:0x007fd3e3c6ae30 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-12256-w3t0y3>, @original_filename="restaurant_file.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"restaurant_file\"; filename=\"restaurant_file.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", "2014-10-02 21:37:56.351742"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", 737.0], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 21:37:56.351742"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 41ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+Processing by MenusController#index as HTML
+  [1m[35mMenu Load (0.6ms)[0m  SELECT "menus".* FROM "menus"
+  Rendered imports/_restaurants.html.erb (0.4ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered menus/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 175ms (Views: 163.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
