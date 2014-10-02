@@ -1,7 +1,7 @@
 class Menu < ActiveRecord::Base
 	belongs_to :restaurant
 
-	def self.import(file)
+		def self.import(file)
 		menu_items = Array.new
 	  spreadsheet = open_spreadsheet(file)
 	  header = spreadsheet.row(1)

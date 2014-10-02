@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-	has_many :favorite_restaurants, class_name: "Restaurant", foreign_key: :customer_id
 	has_many :photos, as: :imageable
+	has_many :favorited_relationships
+	has_many :favorite_restaurants, through: :favorited_relationships, source: :restaurant
 	
 	validates :name, presence: true
 	validates :email, presence: true
