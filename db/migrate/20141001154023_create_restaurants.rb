@@ -5,10 +5,13 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :street
       t.string :number
       t.string :complement
+      t.string :neighborhood
+      t.string :region
       t.string :email
       t.string :facebook
       t.string :twitter
       t.string :site
+
       t.references :customer, index: true
 
       t.timestamps
