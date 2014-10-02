@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @menu = @restaurant.menu || nil
+    @menu = @restaurant.menu
   end
 
   # GET /restaurants/new

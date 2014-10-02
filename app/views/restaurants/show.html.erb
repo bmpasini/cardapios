@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p><strong>Nome:</strong> <%= @restaurant.name %></p>
-<p><strong>Endereço:</strong> <%= @restaurant.street %>, <%= @restaurant.number %><% end %><% if @restaurant.complement %> <%= @restaurant.complement %><% end %> - <%= @restaurant.city %>, <%= @restaurant.state %> - <%= @restaurant.CEP %></p>
+<p><strong>Endereço:</strong> <%= @restaurant.street %>, <%= @restaurant.number.to_i.to_s %><% if @restaurant.complement %> <%= @restaurant.complement %><% end %> - <%= @restaurant.city %> - <%= @restaurant.state %> - <%= @restaurant.CEP %></p>
 <p><strong>Email:</strong> <%= @restaurant.email %></p>
 <p><strong>Site:</strong> <%= @restaurant.site %></p>
+
+<br>
+
+
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

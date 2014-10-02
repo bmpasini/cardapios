@@ -13,6 +13,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :public_email
       t.string :contact_email
       t.string :phone
+      t.string :email
       t.string :site
       t.references :customer, index: true
 

@@ -1,9 +1,11 @@
 <h1>Import New Restaurants and Menus</h1>
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
 <p>Please attach spreadsheets in the correct format so it can be imported properly into the database.</p>
 <%= render 'imports/restaurants' %>
 <br>
 <%= render 'imports/menu' %>
-<br><br><br><br>
+<br>
+<br>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<br><br>
