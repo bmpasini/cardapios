@@ -1,6 +1,6 @@
 class ImportsController < ApplicationController
   def index
-
+    
   end
 
 	def menu

@@ -6,8 +6,12 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :number
       t.string :complement
       t.string :neighborhood
+      t.string :city
+      t.string :state
+      t.string :CEP
       t.string :region
-      t.string :email
+      t.string :public_email
+      t.string :contact_email
       t.string :phone
       t.string :site
       t.references :customer, index: true

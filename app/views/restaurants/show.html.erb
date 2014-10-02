@@ -1,34 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @restaurant.street %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @restaurant.number %>
-</p>
-
-<p>
-  <strong>Complement:</strong>
-  <%= @restaurant.complement %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @restaurant.email %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @restaurant.site %>
-</p>
+<p><strong>Nome:</strong> <%= @restaurant.name %></p>
+<p><strong>Endereço:</strong> <%= @restaurant.street %>, <%= @restaurant.number %><% end %><% if @restaurant.complement %> <%= @restaurant.complement %><% end %> - <%= @restaurant.city %>, <%= @restaurant.state %> - <%= @restaurant.CEP %></p>
+<p><strong>Email:</strong> <%= @restaurant.email %></p>
+<p><strong>Site:</strong> <%= @restaurant.site %></p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
