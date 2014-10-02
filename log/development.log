@@ -5310,3 +5310,788 @@ Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:37:56 -0400
+
+
+Started POST "/imports/restaurants" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+Processing by ImportsController#restaurants as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "restaurant_file"=>#<ActionDispatch::Http::UploadedFile:0x007fd3e55560e8 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-12256-zaaefu>, @original_filename="restaurant_file.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"restaurant_file\"; filename=\"restaurant_file.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", "2014-10-02 21:41:05.648920"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", 737.0], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 21:41:05.648920"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/imports
+Completed 302 Found in 78ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 99ms (Views: 98.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:41:05 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.8ms)
+  Rendered imports/_menu.html.erb (1.0ms)
+  Rendered imports/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 116ms (Views: 115.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:33 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:42:35 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:42:36 -0400
+
+
+Started POST "/imports/restaurants" for 127.0.0.1 at 2014-10-02 17:42:42 -0400
+Processing by ImportsController#restaurants as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "restaurant_file"=>#<ActionDispatch::Http::UploadedFile:0x007fd3e287eae8 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-12256-17devx9>, @original_filename="menu_file.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"restaurant_file\"; filename=\"menu_file.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: session):
+  app/models/restaurant.rb:13:in `block in import'
+  app/models/restaurant.rb:11:in `import'
+  app/controllers/imports_controller.rb:18:in `restaurants'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.0ms)
+
+
+Started POST "/imports/menu" for 127.0.0.1 at 2014-10-02 17:42:53 -0400
+Processing by ImportsController#menu as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "restaurant_name"=>"", "menu_file"=>#<ActionDispatch::Http::UploadedFile:0x007fd3e534c680 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-12256-f576f1>, @original_filename="menu_file.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"menu_file\"; filename=\"menu_file.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[35mRestaurant Load (0.6ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."name" = '' LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (Restaurant does not exists on database.):
+  app/controllers/imports_controller.rb:12:in `menu'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started POST "/imports/menu" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+Processing by ImportsController#menu as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "restaurant_name"=>"Cocobambu", "menu_file"=>#<ActionDispatch::Http::UploadedFile:0x007fd3e3820348 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-12256-11p0zy9>, @original_filename="menu_file.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"menu_file\"; filename=\"menu_file.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."name" = 'Cocobambu' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.115056"], ["price", 100.0], ["product", "Couvert"], ["product_description", "Camarões Marinados, tomate seco com queijo minas frescal temperado, tomates gratinados com alho berinjela, ceviche de peixe, pães de queijo e torradas crocantes."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 21:43:02.115056"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.121036"], ["price", 100.0], ["product", "Isca de Peixe (200g)"], ["product_description", "Isca de peixe à milanesa salpicadas com grãos de gergilim e molho tátaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 21:43:02.121036"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.127538"], ["price", 100.0], ["product", "Camarão a Milanesa"], ["product_description", "Camarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 21:43:02.127538"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.131659"], ["price", 100.0], ["product", "Pastel de Camarão"], ["product_description", "Massa fresca recheada com camarão, catupiry e ervas.(Unidade)."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 21:43:02.131659"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.135022"], ["price", 30.0], ["product", "Salada Light"], ["product_description", "Folhas verdes, tomate caqui, cenoura, palmito e molho de iogurte."], ["session", "Saladas"], ["updated_at", "2014-10-02 21:43:02.135022"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.138572"], ["price", 30.0], ["product", "Salada de Salmão"], ["product_description", "Ceviche de Salmão, alface americana, alface crespa, alface roxa, rucula azeitonas pretas e tomate cereja."], ["session", "Saladas"], ["updated_at", "2014-10-02 21:43:02.138572"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.141895"], ["price", 30.0], ["product", "Salada Caprese"], ["product_description", "Alface americana, alface crespa, rúcula, muçarela de búfula, tomate, mangericão, azeitonas pretas, molho pesto e torradas."], ["session", "Saladas"], ["updated_at", "2014-10-02 21:43:02.141895"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.144802"], ["price", 30.0], ["product", "Salada Verão"], ["product_description", "Folhas verdes, kani kama, manga, tomate seco, cenoura,  molho de mostarda com mel."], ["session", "Saladas"], ["updated_at", "2014-10-02 21:43:02.144802"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.148072"], ["updated_at", "2014-10-02 21:43:02.148072"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.151271"], ["updated_at", "2014-10-02 21:43:02.151271"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.154259"], ["updated_at", "2014-10-02 21:43:02.154259"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.158037"], ["updated_at", "2014-10-02 21:43:02.158037"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-10-02 21:43:02.202078"], ["updated_at", "2014-10-02 21:43:02.202078"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "session", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-10-02 21:43:02.205336"], ["session", "Restaurant.create(name: \"Cocobambu\", street: \"Avenida Juscelino Kubitschek\", number: \"737\", neighborhood: \"Itaim Bibi\", region: \"Itaim Bibi\", phone: \"11 3051-5255\", site: \"http://restaurantecocobambu.com.br/\")"], ["updated_at", "2014-10-02 21:43:02.205336"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 65[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.207904"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 66  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.210135"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 67[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.212138"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 68  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.214082"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 69[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.216027"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 70  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.217883"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 71[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.219731"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 72  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.221598"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 73[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.223601"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 74  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.225434"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 75[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.227228"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 76  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.229078"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 77[0m  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.230955"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "menus" SET "restaurant_id" = $1, "updated_at" = $2 WHERE "menus"."id" = 78  [["restaurant_id", 1], ["updated_at", "2014-10-02 21:43:02.232927"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/imports
+Completed 302 Found in 160ms (ActiveRecord: 30.5ms)
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.6ms)
+  Rendered imports/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 74ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:02 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (1.4ms)
+  Rendered imports/_menu.html.erb (1.6ms)
+  Rendered imports/index.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 168ms (Views: 166.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:43:48 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.6ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 105ms (Views: 103.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:21 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.6ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 112ms (Views: 110.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:33 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.6ms)
+  Rendered imports/_menu.html.erb (1.0ms)
+  Rendered imports/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:44:45 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.6ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 117ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:45:45 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.6ms)
+  Rendered imports/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:23 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.6ms)
+  Rendered imports/_menu.html.erb (0.5ms)
+  Rendered imports/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 79ms (Views: 78.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:34 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:46:47 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (0.5ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 118ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:46:48 -0400
+
+
+Started GET "/imports" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+Processing by ImportsController#index as HTML
+  Rendered imports/_restaurants.html.erb (1.0ms)
+  Rendered imports/_menu.html.erb (0.4ms)
+  Rendered imports/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 114ms (Views: 112.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/import.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/import.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:47:06 -0400

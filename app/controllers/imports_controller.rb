@@ -1,6 +1,6 @@
 class ImportsController < ApplicationController
   def index
-    
+
   end
 
 	def menu
@@ -11,11 +11,11 @@ class ImportsController < ApplicationController
     else
       raise "Restaurant does not exists on database."
     end
-    redirect_to root_url, notice: "Menu imported."
+    redirect_to imports_path, notice: "Menu successfully imported."
   end
 
   def restaurants
     Restaurant.import(params[:restaurant_file])
-    redirect_to root_url, notice: "Restaurants imported."
+    redirect_to imports_path, notice: "Restaurants successfully imported."
   end
 end

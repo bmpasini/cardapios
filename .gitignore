@@ -1,0 +1,13 @@
+/log
+/log/*.log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+/spec/tmp
+/log/development.log
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+.DS_Store
