@@ -5,6 +5,7 @@ class CreateMenus < ActiveRecord::Migration
     	t.string :product
       t.string :product_description
       t.float :price
+      t.references :restaurant, index: true
 
       t.timestamps
     end

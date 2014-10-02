@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :password
-      t.boolean :is_admin
       t.string :photo
+      t.boolean :is_admin?
 
       t.timestamps
     end

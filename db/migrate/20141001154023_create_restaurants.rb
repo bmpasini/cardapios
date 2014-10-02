@@ -9,6 +9,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :facebook
       t.string :twitter
       t.string :site
+      t.references :customer, index: true
 
       t.timestamps
     end

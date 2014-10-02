@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Session:</strong>
+  <%= @restaurant.session %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @restaurant.product %>
+</p>
+
+<p>
+  <strong>Product Description:</strong>
+  <%= @restaurant.product_description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @restaurant.price %>
+</p>
+
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>
