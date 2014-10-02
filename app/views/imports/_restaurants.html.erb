@@ -1,0 +1,6 @@
+<h2>Import Restaurants</h2>
+
+<%= form_tag import_restaurants_path, multipart: true do %>
+  <%= file_field_tag :restaurant_file %>
+  <%= submit_tag "Import" %>
+<% end %>

@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  # resources :menus
+  
   resources :menus do
     collection { post :import }
   end
-
   resources :users
-
   resources :restaurants
-
   root 'menus#index'
+
+  get 'imports' => 'imports#index', as: :import_index
+  post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
+  post 'imports/menu' => 'imports#menu', as: :import_menu
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
