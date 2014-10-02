@@ -732,3 +732,604 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 20:14:22
 
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-01 20:14:22 -0400
+  [1m[36m (24.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20141001154023)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (25.4ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying(255), "street" character varying(255), "number" character varying(255), "complement" character varying(255), "neighborhood" character varying(255), "region" character varying(255), "email" character varying(255), "facebook" character varying(255), "twitter" character varying(255), "site" character varying(255), "customer_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.7ms)[0m  CREATE  INDEX  "index_restaurants_on_customer_id" ON "restaurants"  ("customer_id")
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154023"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateUsers (20141001154410)
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255) NOT NULL, "email" character varying(255) NOT NULL, "password" character varying(255) NOT NULL, "photo" character varying(255), "is_admin?" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (17.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154410"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreatePhotos (20141001154638)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.9ms)[0m  CREATE TABLE "photos" ("id" serial primary key, "name" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154638"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateMenus (20141001160115)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.3ms)[0m  CREATE TABLE "menus" ("id" serial primary key, "session" character varying(255), "product" character varying(255), "product_description" character varying(255), "price" float, "restaurant_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_menus_on_restaurant_id" ON "menus"  ("restaurant_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160115"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePaymentMethods (20141001160331)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "payment_methods" ("id" serial primary key, "name" character varying(255), "icon" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160331"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategories (20141002161318)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "restaurant_categories" ("id" serial primary key, "category" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161318"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategorizations (20141002161638)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "restaurant_categorizations" ("id" serial primary key, "restaurant_id" integer, "restaurant_category_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_restaurant_categorizations_on_restaurant_id" ON "restaurant_categorizations"  ("restaurant_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_restaurant_categorizations_on_restaurant_category_id" ON "restaurant_categorizations"  ("restaurant_category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161638"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20141001154023)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying(255), "street" character varying(255), "number" character varying(255), "complement" character varying(255), "neighborhood" character varying(255), "region" character varying(255), "email" character varying(255), "facebook" character varying(255), "twitter" character varying(255), "site" character varying(255), "customer_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_restaurants_on_customer_id" ON "restaurants"  ("customer_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154023"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to CreateUsers (20141001154410)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255) NOT NULL, "email" character varying(255) NOT NULL, "password" character varying(255) NOT NULL, "photo" character varying(255), "is_admin?" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154410"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreatePhotos (20141001154638)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "photos" ("id" serial primary key, "name" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154638"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to CreateMenus (20141001160115)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "menus" ("id" serial primary key, "session" character varying(255), "product" character varying(255), "product_description" character varying(255), "price" float, "restaurant_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_menus_on_restaurant_id" ON "menus"  ("restaurant_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160115"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePaymentMethods (20141001160331)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "payment_methods" ("id" serial primary key, "name" character varying(255), "icon" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160331"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategories (20141002161318)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "restaurant_categories" ("id" serial primary key, "category" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161318"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategorizations (20141002161638)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "restaurant_categorizations" ("id" serial primary key, "restaurant_id" integer, "restaurant_category_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_restaurant_categorizations_on_restaurant_id" ON "restaurant_categorizations"  ("restaurant_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_restaurant_categorizations_on_restaurant_category_id" ON "restaurant_categorizations"  ("restaurant_category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161638"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20141001154023)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (10.3ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying(255), "street" character varying(255), "number" character varying(255), "complement" character varying(255), "neighborhood" character varying(255), "region" character varying(255), "email" character varying(255), "phone" character varying(255), "site" character varying(255), "customer_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.1ms)[0m  CREATE  INDEX  "index_restaurants_on_customer_id" ON "restaurants"  ("customer_id")
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154023"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateUsers (20141001154410)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.6ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255) NOT NULL, "email" character varying(255) NOT NULL, "password" character varying(255) NOT NULL, "photo" character varying(255), "is_admin?" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154410"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreatePhotos (20141001154638)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "photos" ("id" serial primary key, "name" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154638"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Migrating to CreateMenus (20141001160115)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "menus" ("id" serial primary key, "session" character varying(255), "product" character varying(255), "product_description" character varying(255), "price" float, "restaurant_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.6ms)[0m  [1mCREATE  INDEX  "index_menus_on_restaurant_id" ON "menus"  ("restaurant_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160115"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePaymentMethods (20141001160331)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "payment_methods" ("id" serial primary key, "name" character varying(255), "icon" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160331"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategories (20141002161318)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "restaurant_categories" ("id" serial primary key, "category" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161318"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategorizations (20141002161638)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "restaurant_categorizations" ("id" serial primary key, "restaurant_id" integer, "restaurant_category_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_restaurant_categorizations_on_restaurant_id" ON "restaurant_categorizations"  ("restaurant_id")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_restaurant_categorizations_on_restaurant_category_id" ON "restaurant_categorizations"  ("restaurant_category_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161638"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (17.6ms)[0m  [1mINSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2014-10-02 18:10:03.606368"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", "737"], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 18:10:03.606368"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+
+
+Started GET "/menus" for 127.0.0.1 at 2014-10-02 14:12:57 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MenusController#index as HTML
+  [1m[35mMenu Load (1.5ms)[0m  SELECT "menus".* FROM "menus"
+  Rendered menus/_import.html.erb (1.8ms)
+  Rendered menus/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 504ms (Views: 363.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:12:58 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:12:59 -0400
+
+
+Started POST "/menus/import" for 127.0.0.1 at 2014-10-02 14:13:12 -0400
+Processing by MenusController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f867be08680 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-11731-1r8hn4f>, @original_filename="menu_seed.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"menu_seed.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (20.8ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:13:13.261392"], ["price", 100.0], ["product", "Couvert"], ["product_description", "Camarões Marinados, tomate seco com queijo minas frescal temperado, tomates gratinados com alho berinjela, ceviche de peixe, pães de queijo e torradas crocantes."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:13:13.261392"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:13:13.291798"], ["price", 100.0], ["product", "Isca de Peixe (200g)"], ["product_description", "Isca de peixe à milanesa salpicadas com grãos de gergilim e molho tátaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:13:13.291798"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:13:13.297472"], ["price", 100.0], ["product", "Camarão a Milanesa"], ["product_description", "Camarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:13:13.297472"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:13:13.302603"], ["price", 100.0], ["product", "Pastel de Camarão"], ["product_description", "Massa fresca recheada com camarão, catupiry e ervas.(Unidade)."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:13:13.302603"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:13:13.305777"], ["price", 30.0], ["product", "Salada Light"], ["product_description", "Folhas verdes, tomate caqui, cenoura, palmito e molho de iogurte."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:13:13.305777"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:13:13.308893"], ["price", 30.0], ["product", "Salada de Salmão"], ["product_description", "Ceviche de Salmão, alface americana, alface crespa, alface roxa, rucula azeitonas pretas e tomate cereja."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:13:13.308893"]]
+  [1m[35m (2.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:13:13.315067"], ["price", 30.0], ["product", "Salada Caprese"], ["product_description", "Alface americana, alface crespa, rúcula, muçarela de búfula, tomate, mangericão, azeitonas pretas, molho pesto e torradas."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:13:13.315067"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:13:13.318177"], ["price", 30.0], ["product", "Salada Verão"], ["product_description", "Folhas verdes, kani kama, manga, tomate seco, cenoura,  molho de mostarda com mel."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:13:13.318177"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 778ms (ActiveRecord: 34.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+Processing by MenusController#index as HTML
+  [1m[36mMenu Load (0.6ms)[0m  [1mSELECT "menus".* FROM "menus"[0m
+  Rendered menus/_import.html.erb (0.4ms)
+  Rendered menus/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:13:13 -0400
+
+
+Started POST "/menus/import" for 127.0.0.1 at 2014-10-02 14:14:23 -0400
+Processing by MenusController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f867b148cb0 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-11731-1dvn5sd>, @original_filename="menu_seed.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"menu_seed.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+Completed 500 Internal Server Error in 3ms
+
+TypeError (String can't be coerced into Fixnum):
+  app/models/menu.rb:14:in `*'
+  app/models/menu.rb:14:in `open_spreadsheet'
+  app/models/menu.rb:5:in `import'
+  app/controllers/menus_controller.rb:5:in `import'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/menus/new" for 127.0.0.1 at 2014-10-02 14:15:35 -0400
+Processing by MenusController#new as HTML
+  Rendered menus/_form.html.erb (70.5ms)
+  Rendered menus/new.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 240ms (Views: 232.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/menus/import" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+Processing by MenusController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f867e09aa68 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-11731-sltf15>, @original_filename="menu_seed.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"menu_seed.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:15:42.284775"], ["price", 100.0], ["product", "Couvert"], ["product_description", "Camarões Marinados, tomate seco com queijo minas frescal temperado, tomates gratinados com alho berinjela, ceviche de peixe, pães de queijo e torradas crocantes."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:15:42.284775"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:15:42.288377"], ["price", 100.0], ["product", "Isca de Peixe (200g)"], ["product_description", "Isca de peixe à milanesa salpicadas com grãos de gergilim e molho tátaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:15:42.288377"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:15:42.292052"], ["price", 100.0], ["product", "Camarão a Milanesa"], ["product_description", "Camarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:15:42.292052"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:15:42.295253"], ["price", 100.0], ["product", "Pastel de Camarão"], ["product_description", "Massa fresca recheada com camarão, catupiry e ervas.(Unidade)."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:15:42.295253"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:15:42.298444"], ["price", 30.0], ["product", "Salada Light"], ["product_description", "Folhas verdes, tomate caqui, cenoura, palmito e molho de iogurte."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:15:42.298444"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:15:42.302021"], ["price", 30.0], ["product", "Salada de Salmão"], ["product_description", "Ceviche de Salmão, alface americana, alface crespa, alface roxa, rucula azeitonas pretas e tomate cereja."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:15:42.302021"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:15:42.307861"], ["price", 30.0], ["product", "Salada Caprese"], ["product_description", "Alface americana, alface crespa, rúcula, muçarela de búfula, tomate, mangericão, azeitonas pretas, molho pesto e torradas."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:15:42.307861"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:15:42.310977"], ["price", 30.0], ["product", "Salada Verão"], ["product_description", "Folhas verdes, kani kama, manga, tomate seco, cenoura,  molho de mostarda com mel."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:15:42.310977"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 41ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+Processing by MenusController#index as HTML
+  [1m[35mMenu Load (0.5ms)[0m  SELECT "menus".* FROM "menus"
+  Rendered menus/_import.html.erb (0.4ms)
+  Rendered menus/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 108ms (Views: 106.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:15:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2014-10-02 18:19:38.586923"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", "737"], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 18:19:38.586923"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2014-10-02 18:27:07.839175"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", "737"], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 18:27:07.839175"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2014-10-02 18:27:49.850733"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", "737"], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 18:27:49.850733"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20141001154023)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying(255), "street" character varying(255), "number" character varying(255), "complement" character varying(255), "neighborhood" character varying(255), "region" character varying(255), "email" character varying(255), "phone" character varying(255), "site" character varying(255), "customer_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.3ms)[0m  CREATE  INDEX  "index_restaurants_on_customer_id" ON "restaurants"  ("customer_id")
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154023"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateUsers (20141001154410)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255) NOT NULL, "email" character varying(255) NOT NULL, "password" character varying(255) NOT NULL, "photo" character varying(255), "is_admin?" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154410"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to CreatePhotos (20141001154638)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "photos" ("id" serial primary key, "name" character varying(255), "imageable_id" integer, "imageable_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141001154638"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateMenus (20141001160115)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (7.3ms)[0m  CREATE TABLE "menus" ("id" serial primary key, "session" character varying(255), "product" character varying(255), "product_description" character varying(255), "price" float, "restaurant_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.8ms)[0m  [1mCREATE  INDEX  "index_menus_on_restaurant_id" ON "menus"  ("restaurant_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160115"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePaymentMethods (20141001160331)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "payment_methods" ("id" serial primary key, "name" character varying(255), "icon" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141001160331"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategories (20141002161318)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "restaurant_categories" ("id" serial primary key, "category" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161318"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRestaurantCategorizations (20141002161638)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "restaurant_categorizations" ("id" serial primary key, "restaurant_id" integer, "restaurant_category_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_restaurant_categorizations_on_restaurant_id" ON "restaurant_categorizations"  ("restaurant_id")
+  [1m[36m (2.6ms)[0m  [1mCREATE  INDEX  "index_restaurant_categorizations_on_restaurant_category_id" ON "restaurant_categorizations"  ("restaurant_category_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141002161638"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "restaurants" ("created_at", "name", "neighborhood", "number", "phone", "region", "site", "street", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["created_at", "2014-10-02 18:31:55.988571"], ["name", "Cocobambu"], ["neighborhood", "Itaim Bibi"], ["number", "737"], ["phone", "11 3051-5255"], ["region", "Itaim Bibi"], ["site", "http://restaurantecocobambu.com.br/"], ["street", "Avenida Juscelino Kubitschek"], ["updated_at", "2014-10-02 18:31:55.988571"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MenusController#index as HTML
+  [1m[35mMenu Load (0.8ms)[0m  SELECT "menus".* FROM "menus"
+  Rendered menus/_import.html.erb (0.9ms)
+  Rendered menus/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 168ms (Views: 139.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:03 -0400
+
+
+Started POST "/menus/import" for 127.0.0.1 at 2014-10-02 14:32:09 -0400
+Processing by MenusController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RWyLool0vAbexPrbqSWkB1wNR99nzyKsuhufDp43t2s=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f89bdc42518 @tempfile=#<Tempfile:/var/folders/8q/myk6192j2751lt08_xkgf4d40000gn/T/RackMultipart20141002-11878-15w6qp>, @original_filename="menu_seed.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"menu_seed.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Import"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:32:09.911320"], ["price", 100.0], ["product", "Couvert"], ["product_description", "Camarões Marinados, tomate seco com queijo minas frescal temperado, tomates gratinados com alho berinjela, ceviche de peixe, pães de queijo e torradas crocantes."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:32:09.911320"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:32:09.919781"], ["price", 100.0], ["product", "Isca de Peixe (200g)"], ["product_description", "Isca de peixe à milanesa salpicadas com grãos de gergilim e molho tátaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:32:09.919781"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:32:09.924311"], ["price", 100.0], ["product", "Camarão a Milanesa"], ["product_description", "Camarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro.\nCamarão a milanesa com gergelim. Acompanha molho tártaro."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:32:09.924311"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:32:09.927677"], ["price", 100.0], ["product", "Pastel de Camarão"], ["product_description", "Massa fresca recheada com camarão, catupiry e ervas.(Unidade)."], ["session", "Petiscos e Entradas"], ["updated_at", "2014-10-02 18:32:09.927677"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:32:09.930745"], ["price", 30.0], ["product", "Salada Light"], ["product_description", "Folhas verdes, tomate caqui, cenoura, palmito e molho de iogurte."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:32:09.930745"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:32:09.934051"], ["price", 30.0], ["product", "Salada de Salmão"], ["product_description", "Ceviche de Salmão, alface americana, alface crespa, alface roxa, rucula azeitonas pretas e tomate cereja."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:32:09.934051"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-10-02 18:32:09.937563"], ["price", 30.0], ["product", "Salada Caprese"], ["product_description", "Alface americana, alface crespa, rúcula, muçarela de búfula, tomate, mangericão, azeitonas pretas, molho pesto e torradas."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:32:09.937563"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "menus" ("created_at", "price", "product", "product_description", "session", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-10-02 18:32:09.941299"], ["price", 30.0], ["product", "Salada Verão"], ["product_description", "Folhas verdes, kani kama, manga, tomate seco, cenoura,  molho de mostarda com mel."], ["session", "Saladas"], ["updated_at", "2014-10-02 18:32:09.941299"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 395ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 14:32:09 -0400
+Processing by MenusController#index as HTML
+  [1m[36mMenu Load (0.5ms)[0m  [1mSELECT "menus".* FROM "menus"[0m
+  Rendered menus/_import.html.erb (0.4ms)
+  Rendered menus/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:32:10 -0400
+
+
+Started GET "/menus" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+Processing by MenusController#index as HTML
+  [1m[35mMenu Load (0.5ms)[0m  SELECT "menus".* FROM "menus"
+  Rendered menus/_import.html.erb (1.1ms)
+  Rendered menus/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 121ms (Views: 119.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/menus.css?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/menus.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-10-02 14:33:13 -0400
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-10-02 14:33:25 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.7ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (undefined method `facebook' for #<Restaurant:0x007f89bca91990>):
+    23:         <td><%= restaurant.number %></td>
+    24:         <td><%= restaurant.complement %></td>
+    25:         <td><%= restaurant.email %></td>
+    26:         <td><%= restaurant.facebook %></td>
+    27:         <td><%= restaurant.twitter %></td>
+    28:         <td><%= restaurant.site %></td>
+    29:         <td><%= link_to 'Show', restaurant %></td>
+  app/views/restaurants/index.html.erb:26:in `block in _app_views_restaurants_index_html_erb___3813108912594939089_70114776161440'
+  app/views/restaurants/index.html.erb:19:in `_app_views_restaurants_index_html_erb___3813108912594939089_70114776161440'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
