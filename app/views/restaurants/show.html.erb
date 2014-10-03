@@ -10,7 +10,7 @@
 <% @menu_sessions.each do |session| %>
 	<div class="menu_session">
 		<h3 id="menu_session_title"><%= session %></h3>
-		<% session_items = @menu.items.select { |item| item.session == session } %>
+		<% session_items = select_session_items(session) %>
 		<% session_items.each do |item| %>
 			<strong><%= item.name %></strong><br>
 			<em><%= item.description %></em><br>
