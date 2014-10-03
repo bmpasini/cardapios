@@ -11,16 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002161638) do
+ActiveRecord::Schema.define(version: 20141002232606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "menus", force: true do |t|
+  create_table "favorited_relationships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorited_relationships", ["restaurant_id"], name: "index_favorited_relationships_on_restaurant_id", using: :btree
+  add_index "favorited_relationships", ["user_id"], name: "index_favorited_relationships_on_user_id", using: :btree
+
+  create_table "menu_items", force: true do |t|
     t.string   "session"
-    t.string   "product"
-    t.string   "product_description"
+    t.string   "name"
+    t.string   "description"
     t.float    "price"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_items", ["menu_id"], name: "index_menu_items_on_menu_id", using: :btree
+
+  create_table "menus", force: true do |t|
+    t.string   "status"
     t.integer  "restaurant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
