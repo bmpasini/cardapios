@@ -62,21 +62,21 @@ ActiveRecord::Schema.define(version: 20141002232606) do
     t.datetime "updated_at"
   end
 
-  create_table "restaurant_categories", force: true do |t|
-    t.string   "category",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "restaurant_categorizations", force: true do |t|
     t.integer  "restaurant_id"
-    t.integer  "restaurant_category_id"
+    t.integer  "restaurant_specialty_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "restaurant_categorizations", ["restaurant_category_id"], name: "index_restaurant_categorizations_on_restaurant_category_id", using: :btree
   add_index "restaurant_categorizations", ["restaurant_id"], name: "index_restaurant_categorizations_on_restaurant_id", using: :btree
+  add_index "restaurant_categorizations", ["restaurant_specialty_id"], name: "index_restaurant_categorizations_on_restaurant_specialty_id", using: :btree
+
+  create_table "restaurant_specialties", force: true do |t|
+    t.string   "specialty",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "restaurants", force: true do |t|
     t.string   "name"

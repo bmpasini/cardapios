@@ -1,3 +1,4 @@
-Restaurant.create(name: "Cocobambu", street: "Avenida Juscelino Kubitschek", number: "737", neighborhood: "Itaim Bibi", region: "Itaim Bibi", phone: "11 3051-5255", site: "http://restaurantecocobambu.com.br/")
 # Menu, fazer pelo server
-# Da pra fazer restaurante pelo server tambem agora
+# Restaurante, fazer pelo server
+
+["Africano", "Alemão", "Americano", "Árabe", "Argentino", "Armênio", "Asiático", "Australiano", "Bar", "Bistro", "Brasileiro", "Buffet e Quilo", "Cachorro Quente", "Café", "Cervejaria", "Chileno", "Chinês", "Churrascaria", "Comida Baiana", "Comida Mineira", "Comida Nordestina", "Contemporâneo", "Coreano", "Escandinavo", "Espanhol", "Fondue", "Francês", "Galeteria", "Grego", "Hamburgueria", "Indiano", "Inglesa", "Italiano", "Japonês", "Lanchonete", "Marroquino", "Mediterrâneo", "Mexicano", "Padaria", "Frutos do Mar / Peixe", "Peruano", "Petiscos", "Pizzaria", "Português", "Restaurante Natural", "Russo", "Sanduicheria", "Sobremesas", "Sopa", "Sorveteria", "Sucos", "Suíço", "Tailandês", "Temakeria", "Vegetariano"].each { |specialty| RestaurantSpecialty.create(specialty: specialty) }
