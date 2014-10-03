@@ -10,7 +10,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @menu = @restaurant.menu
+    @menu = @restaurant.menus.select { |menu| menu.status == "current" }.first
+    @menu_sessions = Array.new
+    @menu.items.each do |item|
+      @menu_sessions << item.session unless @menu_sessions.include? item.session
+    end
   end
 
   # GET /restaurants/new

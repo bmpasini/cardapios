@@ -1,5 +1,4 @@
 class Import
-
 	def self.menu(file)
 	  spreadsheet = open_spreadsheet(file)
 	  header = spreadsheet.row(1)
@@ -29,5 +28,4 @@ class Import
 	  	raise "File type must be .xlsx"
 	  end
 	end
-
 end

@@ -7,8 +7,17 @@
 
 <h2>Menu</h2>
 
-
-
+<% @menu_sessions.each do |session| %>
+	<div class="menu_session">
+		<h3 id="menu_session_title"><%= session %></h3>
+		<% session_items = @menu.items.select { |item| item.session == session } %>
+		<% session_items.each do |item| %>
+			<strong><%= item.name %></strong><br>
+			<em><%= item.description %></em><br>
+			<u><%= item.price %></u><br><br>
+		<% end %>
+	</div>
+<% end %>
 
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
