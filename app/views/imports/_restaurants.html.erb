@@ -1,6 +1,17 @@
 <h2>Import Restaurants</h2>
 
 <%= form_tag import_restaurants_path, multipart: true do %>
-  <%= file_field_tag :restaurant_file %>
+  <p>Select restaurant specialties:</p>
+  <% i = 0 %>
+  <% RestaurantSpecialty.all.each do |specialty| %>
+		<%= check_box_tag 'specialty[]', specialty.specialty, false  %>
+		<%= label_tag 'specialty[specialty.specialty]', specialty.specialty %>
+		<% i += 1 %>
+		<% if i % 10 == 0 %>
+			<br>
+		<% end %>
+	<% end %>
+<br><br>
+	<%= file_field_tag :restaurant_file %>
   <%= submit_tag "Import" %>
 <% end %>
