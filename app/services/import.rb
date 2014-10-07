@@ -17,6 +17,7 @@ class Import
 	  header = spreadsheet.row(1)
 	  (2..spreadsheet.last_row).each do |i|
 	    row = Hash[[header, spreadsheet.row(i)].transpose]
+	    # row.delete(:restaurant_categories)
 	    Restaurant.create(row)
 	  end
 	end
