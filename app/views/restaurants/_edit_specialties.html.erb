@@ -1,0 +1,15 @@
+
+
+<p>Select restaurant specialties:</p>
+  <% i = 0 %>
+  <% RestaurantSpecialty.all.each do |specialty| %>
+  	<%= form_tag import_restaurants_path, multipart: true do %>
+		<%= check_box_tag 'specialty[]', specialty.specialty, false  %>
+		<%= label_tag 'specialty[specialty.specialty]', specialty.specialty %>
+		<% i += 1 %>
+		<% if i % 10 == 0 %>
+			<br>
+		<% end %>
+	<% end %>
+	<br><br>
+	<%= submit_tag "Import" %>
