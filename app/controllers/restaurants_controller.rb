@@ -1,5 +1,9 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :edit_specialties]
+
+  def edit_specialties
+    @restaurant_categorization = RestaurantCategorization.find_by(restaurant_id = @restaurant.id)
+  end
 
   # GET /restaurants
   # GET /restaurants.json
