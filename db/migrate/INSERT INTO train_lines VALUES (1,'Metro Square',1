@@ -1,0 +1,142 @@
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS trains;
+DROP TABLE IF EXISTS train_lines;
+DROP TABLE IF EXISTS stations;
+DROP TABLE IF EXISTS schedules;
+DROP TABLE IF EXISTS metacards;
+DROP TABLE IF EXISTS trips;
+DROP TABLE IF EXISTS trip_data;
+SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE trains (
+  tid INT(10),
+  PRIMARY KEY (tid)
+);
+
+CREATE TABLE train_lines (
+  lid INT(10),
+  station_sname VARCHAR(40),
+  station_number_uptown INT(10),
+  station_number_downtown INT(10),
+  PRIMARY KEY (lid, station_sname)
+);
+
+CREATE TABLE stations (
+  sname VARCHAR(40),
+  PRIMARY KEY (sname)
+);
+
+CREATE TABLE schedules (
+  first_departure DATETIME,
+  line_lid INT(10),
+  train_tid INT(10),
+  direction VARCHAR(40),
+  PRIMARY KEY (first_departure, train_tid)
+);
+
+CREATE TABLE metacards (
+  mid INT(10),
+  balance NUMERIC(6,2),
+  PRIMARY KEY (mid)
+);
+
+CREATE TABLE trips (
+  station_sname_in VARCHAR(40),
+  station_sname_out VARCHAR(40),
+  time_in DATETIME,
+  time_out DATETIME,
+  metacard_mid INT(10),
+  trip_cost NUMERIC(4,2),
+  PRIMARY KEY (metacard_mid, time_in, time_out)
+);
+
+CREATE TABLE trip_data (
+  station_sname_in VARCHAR(40),
+  station_sname_out VARCHAR(40),
+  cost_between_stations NUMERIC(4,2),
+  time_between_stations VARCHAR(40),
+  PRIMARY KEY (station_sname_in, station_sname_out)
+);
+
+ALTER TABLE train_lines ADD FOREIGN KEY (station_sname) REFERENCES stations (sname);
+ALTER TABLE schedules ADD FOREIGN KEY (line_lid) REFERENCES train_lines (lid);
+ALTER TABLE schedules ADD FOREIGN KEY (train_tid) REFERENCES trains (tid);
+ALTER TABLE metacards ADD FOREIGN KEY (mid) REFERENCES trips (metacard_mid);
+ALTER TABLE trips ADD FOREIGN KEY (station_sname_in) REFERENCES stations (sname);
+ALTER TABLE trips ADD FOREIGN KEY (station_sname_out) REFERENCES stations (sname);
+ALTER TABLE trip_data ADD FOREIGN KEY (station_sname_in) REFERENCES stations (sname);
+ALTER TABLE trip_data ADD FOREIGN KEY (station_sname_out) REFERENCES stations (sname);
+
+INSERT INTO trains VALUES (1);
+INSERT INTO trains VALUES (2);
+INSERT INTO trains VALUES (3);
+INSERT INTO trains VALUES (4);
+INSERT INTO trains VALUES (5);
+
+INSERT INTO train_lines VALUES (1,'Metro Square',1,4);
+INSERT INTO train_lines VALUES (1,'Luthor Avenue',2,3);
+INSERT INTO train_lines VALUES (1,'Lois Lane',3,2);
+INSERT INTO train_lines VALUES (1,'Court Street',4,1);
+INSERT INTO train_lines VALUES (2,'Lois Lane',1,3);
+INSERT INTO train_lines VALUES (2,'Borough Hall',2,2);
+INSERT INTO train_lines VALUES (2,'Park Avenue',3,1);
+
+INSERT INTO stations VALUES ('Metro Square');
+INSERT INTO stations VALUES ('Luthor Avenue');
+INSERT INTO stations VALUES ('Lois Lane');
+INSERT INTO stations VALUES ('Court Street');
+INSERT INTO stations VALUES ('Borough Hall');
+INSERT INTO stations VALUES ('Park Avenue');
+
+INSERT INTO schedules VALUES (NOW(),1,1,'uptown');
+INSERT INTO schedules VALUES (NOW()+6*60,1,2,'uptown');
+INSERT INTO schedules VALUES (NOW(),1,3,'downtown');
+INSERT INTO schedules VALUES (NOW()+6*60,1,3,'downtown');
+INSERT INTO schedules VALUES (NOW(),2,4,'uptown');
+INSERT INTO schedules VALUES (NOW()+6*60,2,4,'uptown');
+INSERT INTO schedules VALUES (NOW(),2,5,'downtown');
+INSERT INTO schedules VALUES (NOW()+6*60,2,5,'downtown');
+
+INSERT INTO metacards VALUES (1,10);
+INSERT INTO metacards VALUES (2,20);
+INSERT INTO metacards VALUES (3,30);
+INSERT INTO metacards VALUES (4,40);
+INSERT INTO metacards VALUES (5,50);
+
+INSERT INTO trip_data VALUES ('Metro Square','Luthor Avenue',2.00,5);
+INSERT INTO trip_data VALUES ('Metro Square','Lois Lane',2.00,10);
+INSERT INTO trip_data VALUES ('Metro Square','Court Street',2.00,17);
+INSERT INTO trip_data VALUES ('Metro Square','Borough Hall',2.50,22);
+INSERT INTO trip_data VALUES ('Metro Square','Park Avenue',2.50,27);
+
+INSERT INTO trip_data VALUES ('Luthor Avenue','Metro Square',2.00,5);
+INSERT INTO trip_data VALUES ('Luthor Avenue','Lois Lane',2.00,5);
+INSERT INTO trip_data VALUES ('Luthor Avenue','Court Street',2.00,12);
+INSERT INTO trip_data VALUES ('Luthor Avenue','Borough Hall',2.50,17);
+INSERT INTO trip_data VALUES ('Luthor Avenue','Park Avenue',2.50,22);
+
+INSERT INTO trip_data VALUES ('Lois Lane','Metro Square',2.00,10);
+INSERT INTO trip_data VALUES ('Lois Lane','Luthor Avenue',2.00,5);
+INSERT INTO trip_data VALUES ('Lois Lane','Court Street',2.00,7);
+INSERT INTO trip_data VALUES ('Lois Lane','Borough Hall',2.50,12);
+INSERT INTO trip_data VALUES ('Lois Lane','Park Avenue',2.50,17);
+
+INSERT INTO trip_data VALUES ('Court Street','Metro Square',2.00,17);
+INSERT INTO trip_data VALUES ('Court Street','Luthor Avenue',2.00,12);
+INSERT INTO trip_data VALUES ('Court Street','Lois Lane',2.00,7);
+INSERT INTO trip_data VALUES ('Court Street','Borough Hall',2.50,19);
+INSERT INTO trip_data VALUES ('Court Street','Park Avenue',2.50,24);
+
+INSERT INTO trip_data VALUES ('Borough Hall','Metro Square',2.50,22);
+INSERT INTO trip_data VALUES ('Borough Hall','Luthor Avenue',2.50,17);
+INSERT INTO trip_data VALUES ('Borough Hall','Lois Lane',2.50,12);
+INSERT INTO trip_data VALUES ('Borough Hall','Court Street',2.50,19);
+INSERT INTO trip_data VALUES ('Borough Hall','Park Avenue',2.00,5);
+
+INSERT INTO trip_data VALUES ('Park Avenue','Metro Square',2.50,27);
+INSERT INTO trip_data VALUES ('Park Avenue','Luthor Avenue',2.50,22);
+INSERT INTO trip_data VALUES ('Park Avenue','Lois Lane',2.50,17);
+INSERT INTO trip_data VALUES ('Park Avenue','Court Street',2.50,24);
+INSERT INTO trip_data VALUES ('Park Avenue','Borough Hall',2.00,5);
+
+

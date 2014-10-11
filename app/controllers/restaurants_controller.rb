@@ -28,6 +28,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
+    @menu = @restaurant.menus.select { |menu| menu.status == "current" }.first
   end
 
   # POST /restaurants
