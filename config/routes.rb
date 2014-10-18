@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
   post 'imports/menu' => 'imports#menu', as: :import_menu
 
+  get 'restaurants/menu_items/:id/edit' => 'menu_items#edit', as: :edit_menu_item
+  patch 'restaurants/menu_items/:id' => 'menu_items#update'
+  delete 'restaurants/menu_items/:id' => 'menu_items#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
