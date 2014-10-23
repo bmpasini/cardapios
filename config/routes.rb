@@ -2,16 +2,20 @@ Rails.application.routes.draw do
   
   resources :menus
   resources :users
-  resources :restaurants
+  resources :restaurants do
+    resources :menus
+    resources :menu_items, only: [:edit, :destroy]
+  end
+
   root 'menus#index'
 
   get 'imports' => 'imports#index', as: :imports
   post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
   post 'imports/menu' => 'imports#menu', as: :import_menu
 
-  get 'restaurants/menu_items/:id/edit' => 'menu_items#edit', as: :edit_menu_item
-  patch 'restaurants/menu_items/:id' => 'menu_items#update'
-  delete 'restaurants/menu_items/:id' => 'menu_items#destroy'
+  # get 'restaurants/menu_items/:id/edit' => 'menu_items#edit', as: :edit_menu_items
+  # patch 'restaurants/menu_items/:id' => 'menu_items#update'
+  # delete 'restaurants/menu_items/:id' => 'menu_items#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

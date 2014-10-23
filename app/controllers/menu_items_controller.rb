@@ -1,15 +1,21 @@
 class MenuItemsController < ApplicationController
 	before_action :set_item, only: [:edit, :destroy, :set_restaurant]
-  before_action :set_restaurant, only: [:destroy]
+  before_action :set_restaurant, only: [:edit, :destroy]
 
   def index
     @items = MenuItem.all
   end
 
   def edit
+
   end
 
   def update
+    if @restaurant.update(restaurant_params)
+      redirect_to @restaurant, notice: 'Restaurant was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
