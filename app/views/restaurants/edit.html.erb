@@ -7,5 +7,5 @@
 <%= render 'edit_menu_form' %>
 <br>
 
-<%= link_to 'Show', @restaurant %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to 'New', new_restaurant_menu_item_path(@restaurant) %> |
+<%= link_to 'Back', restaurant_path(@restaurant) %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :restaurants do
     resources :menus
-    resources :menu_items, only: [:edit, :destroy]
+    resources :menu_items, only: [:new, :create, :edit, :update, :destroy]
   end
 
   root 'menus#index'
