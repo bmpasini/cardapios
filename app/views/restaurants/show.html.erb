@@ -14,7 +14,7 @@
 		<% session_items.each do |item| %>
 			<strong><%= item.name %></strong><br>
 			<em><%= item.description %></em><br>
-			<u><%= item.price %></u><br><br>
+			<u><%= number_with_precision(item.price, precision: 2) %></u><br><br>
 		<% end %>
 	</div>
 <% end %>
