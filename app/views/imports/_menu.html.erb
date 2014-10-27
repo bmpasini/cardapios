@@ -2,8 +2,8 @@
 <i>*Important: Use the same name as in the database</i>
 <br><br>
 <%= form_tag import_menu_path, multipart: true do %>
-  <%= label_tag(:restaurant_name, "Restaurant Name: ") %>
-  <%= text_field_tag(:restaurant_name) %>
+  <%= label_tag(:restaurant_id, "Restaurant Name: ") %>
+	<%= select_tag(:restaurant_id, restaurant_options, options = { prompt: "Select a restaurant" }) %>
   <%= file_field_tag :menu_file %>
   <%= submit_tag "Import" %>
 <% end %>

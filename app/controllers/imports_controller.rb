@@ -1,15 +1,15 @@
 class ImportsController < ApplicationController
   def index
-    
+    @restaurants = Restaurant.all
   end
 
 	def menu
-    restaurant = Restaurant.find_by(name: params[:restaurant_name])
+    restaurant = Restaurant.find(params[:restaurant_id])
     if restaurant
       menu = Import.menu(params[:menu_file])
       menu.update(restaurant: restaurant)
-    else
-      raise "Restaurant does not exists on database."
+    # else
+    #   raise "Restaurant does not exist on database."
     end
     redirect_to imports_path, notice: "Menu successfully imported."
   end
