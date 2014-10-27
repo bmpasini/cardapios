@@ -18,7 +18,7 @@
       <tr>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.street %></td>
-        <td><%= restaurant.number %></td>
+        <td><%= number_with_precision(restaurant.number, precision: 0) %></td>
         <td><%= restaurant.complement %></td>
         <td><%= restaurant.email %></td>
         <td><%= restaurant.site %></td>

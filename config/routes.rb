@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :menu_items, only: [:new, :create, :edit, :update, :destroy]
   end
 
-  root 'menus#index'
+  root 'restaurants#index'
 
   get 'imports' => 'imports#index', as: :imports
   post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
