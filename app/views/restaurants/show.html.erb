@@ -2,7 +2,7 @@
 
 <h1 id="restaurant_name"><%= @restaurant.name %></h1>
 <p><%= @restaurant.street %>, <%= @restaurant.number.to_i.to_s %><% if @restaurant.complement %> <%= @restaurant.complement %><% end %> - <%= @restaurant.city %> - <%= @restaurant.state %> - <%= @restaurant.CEP %></p>
-<p id="restaurant_email"><%= @restaurant.email %></p>
+<p id="restaurant_email"><%= @restaurant.public_email %></p>
 <p id="restaurant_site"><%= @restaurant.site %></p>
 
 <h2>Menu</h2>

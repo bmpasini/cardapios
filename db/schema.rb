@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 20141002232606) do
     t.string   "public_email"
     t.string   "contact_email"
     t.string   "phone"
-    t.string   "email"
     t.string   "site"
     t.integer  "customer_id"
     t.datetime "created_at"
