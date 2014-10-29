@@ -1,1 +1,3 @@
-_by_specialty.html.erb
+<% @specialties.each do |specialty| %>
+	<a href="#"><%= specialty.specialty %></a>
+<% end %>
