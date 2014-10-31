@@ -9,17 +9,18 @@ Rails.application.routes.draw do
     end
   end
 
+  # ROOT
   root 'restaurants#index'
 
+  # IMPORTS
   get 'imports' => 'imports#index', as: :imports
   post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
   post 'imports/menu' => 'imports#menu', as: :import_menu
 
-  # post 'restaurants/:restaurant_id/specialties' => 'restaurants#edit_specialties' as: :edit_specialties
-
-  # get 'restaurants/menu_items/:id/edit' => 'menu_items#edit', as: :edit_menu_items
-  # patch 'restaurants/menu_items/:id' => 'menu_items#update'
-  # delete 'restaurants/menu_items/:id' => 'menu_items#destroy'
+  # SORTS
+  get 'sorts' => 'sorts#index', as: :sorts
+  get 'sorts/specialty/:id' => 'sorts#show_specialty', as: :restaurant_specialty
+  get 'sorts/neighborhood/:id' => 'sorts#show_neighborhood', as: :neighborhood
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

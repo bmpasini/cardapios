@@ -1,7 +1,7 @@
 class SortsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
-		@specialties = RestaurantSpecialties.all
+		@specialties = RestaurantSpecialty.all
 		@neighborhoods = Neighborhood.all
 	end
 
