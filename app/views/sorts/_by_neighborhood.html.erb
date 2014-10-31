@@ -1,1 +1,3 @@
-_by_neighborhood.html.erb
+<% @neighborhoods.each do |neighborhood| %>
+	<a href="#"><%= neighborhood.name %></a>
+<% end %>

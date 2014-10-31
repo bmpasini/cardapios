@@ -1,7 +1,7 @@
 class CreateNeighborhoods < ActiveRecord::Migration
   def change
     create_table :neighborhoods do |t|
-      t.string :neighborhood, null: false, uniqueness: true
+      t.string :name, null: false, uniqueness: true
 
       t.timestamps
     end
