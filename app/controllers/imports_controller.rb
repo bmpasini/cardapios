@@ -1,6 +1,7 @@
 class ImportsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    @specialties = RestaurantSpecialty.all
   end
 
 	def menu
@@ -8,8 +9,6 @@ class ImportsController < ApplicationController
     if restaurant
       menu = Import.menu(params[:menu_file])
       menu.update(restaurant: restaurant)
-    # else
-    #   raise "Restaurant does not exist on database."
     end
     redirect_to imports_path, notice: "Menu successfully imported."
   end
@@ -18,4 +17,20 @@ class ImportsController < ApplicationController
     Import.restaurant(params[:restaurant_file])
     redirect_to imports_path, notice: "Restaurants successfully imported."
   end
+
+  private
+    def get_specialties(specialty_ids_arr)
+      specialties = Array.new
+      specialty_ids_arr.each do |s_id|
+        specialties << RestaurantSpecialty.find(s_id.to_i)
+      end
+      specialties
+    end
+
+    def link_specialties(restaurant, specialty_ids_arr)
+      specialties = get_specialties(specialty_ids_arr)
+      specialties.each do |specialty|
+        RestaurantCategorization.create(restaurant: restaurant, restaurant_specialty: specialty)
+      end
+    end
 end

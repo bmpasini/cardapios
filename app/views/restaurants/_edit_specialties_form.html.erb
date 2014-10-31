@@ -1,0 +1,12 @@
+<h2>Edit specialties</h2>
+<% i = 0 %>
+<%= form_tag edit_specialties_restaurant_path(@restaurant), multipart: true do %>
+	<% RestaurantSpecialty.all.each do |specialty| %>
+		<%= check_box_tag "specialty[]", specialty.id, has_specialty?(specialty.id) %>
+		<%= label_tag "specialty[#{specialty.id}]", specialty.specialty %>
+		<% i += 1 %>
+		<% if i % 10 == 0 %><br><% end %>
+	<% end %>
+	<br><br>
+	<%= submit_tag "Update Specialties" %>
+<% end %>

@@ -1,8 +1,19 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :edit_specialties]
 
+  # POST
   def edit_specialties
-    @restaurant_categorization = RestaurantCategorization.find_by(restaurant_id = @restaurant.id)
+    RestaurantSpecialty.all.each do |specialty|
+      if params[:specialty].include? specialty.id.to_s
+        RestaurantCategorization.find_or_create_by(restaurant: @restaurant, restaurant_specialty: specialty)
+      else
+        restaurant_categorization = RestaurantCategorization.find_by(restaurant: @restaurant, restaurant_specialty: specialty)
+        if restaurant_categorization
+          restaurant_categorization.destroy
+        end
+      end
+    end
+    redirect_to @restaurant, notice: 'Restaurant specialties successfully updated.'
   end
 
   # GET /restaurants
@@ -29,6 +40,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1/edit
   def edit
     @menu = @restaurant.menus.select { |menu| menu.status == "current" }.first
+    @specialties = @restaurant.restaurant_specialties
   end
 
   # POST /restaurants

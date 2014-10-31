@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  
   resources :menus
   resources :users
   resources :restaurants do
     resources :menus
     resources :menu_items, only: [:new, :create, :edit, :update, :destroy]
+    member do
+      post :edit_specialties
+    end
   end
 
   root 'restaurants#index'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   get 'imports' => 'imports#index', as: :imports
   post 'imports/restaurants' => 'imports#restaurants', as: :import_restaurants
   post 'imports/menu' => 'imports#menu', as: :import_menu
+
+  # post 'restaurants/:restaurant_id/specialties' => 'restaurants#edit_specialties' as: :edit_specialties
 
   # get 'restaurants/menu_items/:id/edit' => 'menu_items#edit', as: :edit_menu_items
   # patch 'restaurants/menu_items/:id' => 'menu_items#update'

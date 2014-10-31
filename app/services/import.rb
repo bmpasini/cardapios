@@ -18,7 +18,6 @@ class Import
 	  (2..spreadsheet.last_row).each do |i|
 	    row = Hash[[header, spreadsheet.row(i)].transpose]
 	    restaurant = Restaurant.create(row)
-	    RestaurantCategorization.create(restaurant: restaurant, restaurant_specialty: nil)
 	  end
 	end
 
