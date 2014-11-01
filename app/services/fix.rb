@@ -24,6 +24,11 @@ class Fix
     specialty.update(specialty_fixed: specialty_fixed)
   end
 
+  def self.neighborhood(neighborhood)
+    neighborhood_fixed = str(neighborhood.name)
+    neighborhood.update(name_fixed: neighborhood_fixed)
+  end
+
   private
     def self.str(string)
       string.downcase!

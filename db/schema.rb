@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20141029211920) do
 
   create_table "neighborhoods", force: true do |t|
     t.string   "name",       null: false
+    t.string   "name_fixed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

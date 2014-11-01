@@ -3,8 +3,9 @@ class RestaurantsController < ApplicationController
 
   #get
   def sorted
-    @neighborhood = Neighborhood.find_by(name: params[:neighborhood])
-    @specialty = RestaurantSpecialty.find_by(specialty: params[:specialty])
+    @neighborhood = Neighborhood.find_by(name_fixed: params[:neighborhood])
+    @specialty = RestaurantSpecialty.find_by(specialty_fixed: params[:specialty])
+    @restaurants = filter_restaurants(@neighborhood, @specialty)
   end
 
   # get
@@ -84,6 +85,11 @@ class RestaurantsController < ApplicationController
   end
 
   private
+    def filter_restaurants(neighborhood, specialty)
+      restaurants_n = neighborhood ? neighborhood.restaurants : Restaurant.all
+      restaurants_s = specialty ? specialty.restaurants : Restaurant.all
+      restaurants_n & restaurants_s
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
