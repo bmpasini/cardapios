@@ -1,17 +1,5 @@
 class Fix
-	def self.str(string)
-		string.downcase!
-    string.gsub!(/[àáâã]/, 'a')
-    string.gsub!(/[èéê]/, 'e')
-    string.gsub!(/[îíì]/, 'i')
-    string.gsub!(/[ôòóõ]/, 'o')
-    string.gsub!(/[ûüùú]/, 'u')
-    string.gsub!(/[ç]/, 'c')
-    string.gsub!(' ', '-')
-    string
-  end
-
-  def self.restaurant_name(restaurant)
+	def self.restaurant_name(restaurant)
   	i = 1
   	exists_already = true
   	name_fixed = str(restaurant.name)
@@ -30,4 +18,22 @@ class Fix
 	  	end
 		end
   end
+
+  def self.specialty(specialty)
+    specialty_fixed = str(specialty.specialty)
+    specialty.update(specialty_fixed: specialty_fixed)
+  end
+
+  private
+    def self.str(string)
+      string.downcase!
+      string.gsub!(/[ÀàÁáÂâÃã]/, 'a')
+      string.gsub!(/[ÈèÉéÊê]/, 'e')
+      string.gsub!(/[ÎîÍíÌì]/, 'i')
+      string.gsub!(/[ÔôÒòÓóÕõ]/, 'o')
+      string.gsub!(/[ÛûÜüÙùÚú]/, 'u')
+      string.gsub!(/[Çç]/, 'c')
+      string.gsub!(' ', '-')
+      string
+    end
 end
