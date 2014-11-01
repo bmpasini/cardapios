@@ -2,6 +2,7 @@ class CreateRestaurants < ActiveRecord::Migration
   def change
     create_table :restaurants do |t|
       t.string :name
+      t.string :name_fixed, uniqueness: true
       t.string :street
       t.string :number
       t.string :complement

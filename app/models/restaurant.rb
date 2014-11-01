@@ -5,5 +5,5 @@ class Restaurant < ActiveRecord::Base
 	has_many :photos, as: :imageable
 	has_many :favorited_relationships
 	has_many :preferred_customers, through: :favorited_relationships, source: :user
-	belongs_to :neighborhood_model
+	belongs_to :neighborhood_model, class_name: "Neighborhood"
 end

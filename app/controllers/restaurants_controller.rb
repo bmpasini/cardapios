@@ -1,6 +1,12 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :edit_specialties]
 
+  #get
+  def sorted
+    @neighborhood = Neighborhood.find_by(name: params[:neighborhood])
+    @specialty = RestaurantSpecialty.find_by(specialty: params[:specialty])
+  end
+
   # get
   def missing_specialty
     @restaurants = Array.new

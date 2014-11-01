@@ -25,8 +25,9 @@ class Import
 		# the neighborhood has to be in the database already
 		def self.create_restaurant(row)
 	    restaurant = Restaurant.create(row)
-	    neighborhood = Neighborhood.find_by(name: row[:neighborhood])
+	    neighborhood = Neighborhood.find_by(name: restaurant.neighborhood)
 	    restaurant.update(neighborhood_model: neighborhood)
+	    Fix.restaurant_name(restaurant)
 		end
 
 		def self.open_spreadsheet(file)

@@ -79,13 +79,15 @@ ActiveRecord::Schema.define(version: 20141029211920) do
   add_index "restaurant_categorizations", ["restaurant_specialty_id"], name: "index_restaurant_categorizations_on_restaurant_specialty_id", using: :btree
 
   create_table "restaurant_specialties", force: true do |t|
-    t.string   "specialty",  null: false
+    t.string   "specialty",       null: false
+    t.string   "specialty_fixed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
+    t.string   "name_fixed"
     t.string   "street"
     t.string   "number"
     t.string   "complement"
