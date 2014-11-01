@@ -99,11 +99,13 @@ ActiveRecord::Schema.define(version: 20141029211920) do
     t.string   "phone"
     t.string   "site"
     t.integer  "customer_id"
+    t.integer  "neighborhood_model_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "restaurants", ["customer_id"], name: "index_restaurants_on_customer_id", using: :btree
+  add_index "restaurants", ["neighborhood_model_id"], name: "index_restaurants_on_neighborhood_model_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",       null: false

@@ -15,6 +15,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :phone
       t.string :site
       t.references :customer, index: true
+      t.references :neighborhood_model, index: true
 
       t.timestamps
     end

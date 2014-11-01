@@ -1,7 +1,15 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy, :edit_specialties]
 
-  # POST
+  # get
+  def missing_specialty
+    @restaurants = Array.new
+    Restaurant.all.each do |restaurant|
+
+    end
+  end
+
+  # post
   def edit_specialties
     RestaurantSpecialty.all.each do |specialty|
       if params[:specialty].include? specialty.id.to_s
@@ -47,6 +55,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)  
     if @restaurant.save
+
       redirect_to @restaurant, notice: 'Restaurant was successfully created.'
     else
       render :new
@@ -76,6 +85,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :street, :number, :complement, :email, :phone, :site)
+      params.require(:restaurant).permit(:name, :street, :number, :complement, :neighborhood, :city, :state, :CEP, :region, :public_email, :contact_email, :phone, :site)
     end
 end
