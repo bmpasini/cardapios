@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   def missing_specialty
     @restaurants = Array.new
     Restaurant.all.each do |restaurant|
-
+      @restaurants << restaurant if restaurant.restaurant_specialties.empty?
     end
   end
 

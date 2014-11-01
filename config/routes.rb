@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :menus
     resources :menu_items, only: [:new, :create, :edit, :update, :destroy]
+    collection do
+      get :missing_specialty
+    end
     member do
       post :edit_specialties
     end

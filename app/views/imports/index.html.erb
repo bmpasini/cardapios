@@ -2,6 +2,10 @@
 <p>Please attach spreadsheets in the correct format so it can be imported properly into the database.</p>
 <%= render 'imports/restaurants' %>
 <br>
+<i>*Important: Restaurants are imported with no specialty selected. Please click the link below to select them.</i>
+<br><br>
+<%= link_to 'Restaurants with no specialties', missing_specialty_restaurants_path %>
+<br>
 <%= render 'imports/menu' %>
 <br>
 <br>
