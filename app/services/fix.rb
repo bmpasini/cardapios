@@ -39,6 +39,7 @@ class Fix
       string.gsub!(/[ÛûÜüÙùÚú]/, 'u')
       string.gsub!(/[Çç]/, 'c')
       string.gsub!(' ', '-')
+      string.gsub!('/ ', '')
       string
     end
 end
