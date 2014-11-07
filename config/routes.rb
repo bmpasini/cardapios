@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   get 'sorts/specialty/:id' => 'sorts#show_specialty', as: :restaurant_specialty
   get 'sorts/neighborhood/:id' => 'sorts#show_neighborhood', as: :neighborhood
 
+  get 'restaurants/:neighborhood/todas-especialidades/' => 'restaurants#sorted', as: :sorted_by_neighborhood
+  get 'restaurants/todos-os-bairros/:specialty/' => 'restaurants#sorted', as: :sorted_by_specialty
   get 'restaurants/:neighborhood/:specialty/' => 'restaurants#sorted', as: :restaurants_sorted
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -14,4 +14,14 @@ class SortsController < ApplicationController
 		@neighborhood = Neighborhood.find(params[:id])
 		@restaurants = @neighborhood.restaurants
 	end
+
+	def sorted_by_specialty
+		@specialty = RestaurantSpecialty.find_by(specialty_fixed: params[:specialty])
+		@restaurants = @specialty.restaurants
+	end
+
+	def sorted_by_neighborhood
+		@neighborhood = Neighborhood.find_by(name_fixed: params[:neighborhood])
+		@restaurants = @neighborhood.restaurants
+	end
 end
