@@ -1,7 +1,3 @@
 <% @specialties.each do |specialty| %>
-	<%= link_to specialty.specialty, specialty %>
-<% end %>
-<br><br>
-<% @specialties.each do |specialty| %>
 	<%= link_to specialty.specialty, sorted_by_specialty_path(specialty.specialty_fixed) %>
 <% end %>
